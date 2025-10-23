@@ -1,0 +1,665 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informative Speech Builder Enhanced</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .step-content { display: none; }
+      .step-content.active { display: block; }
+      .list-container { margin-top: 1rem; }
+      .list-item { display: flex; align-items: center; margin-bottom: 0.5rem; }
+      .list-item input { flex-grow: 1; }
+      .list-item button { margin-left: 0.5rem; }
+      .star { font-size: 1.5rem; color: gray; }
+      .star.active { color: gold; }
+    </style>
+  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-3{margin-left:0.75rem}.ml-6{margin-left:1.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.h-2{height:0.5rem}.h-4{height:1rem}.h-40{height:10rem}.h-full{height:100%}.w-20{width:5rem}.w-full{width:100%}.max-w-4xl{max-width:56rem}.flex-1{flex:1 1 0%}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.items-center{align-items:center}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.rounded{border-radius:0.25rem}.border{border-width:1px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-300{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-purple-300{--tw-bg-opacity:1;background-color:rgb(216 180 254 / var(--tw-bg-opacity, 1))}.bg-purple-500{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.text-center{text-align:center}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-purple-700{--tw-text-opacity:1;color:rgb(126 34 206 / var(--tw-text-opacity, 1))}.text-purple-800{--tw-text-opacity:1;color:rgb(107 33 168 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow{--tw-shadow:0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-purple-600:hover{--tw-bg-opacity:1;background-color:rgb(147 51 234 / var(--tw-bg-opacity, 1))}@media (min-width: 640px){.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-7{grid-template-columns:repeat(7, minmax(0, 1fr))}}</style></head>
+  <body class="bg-gray-50 font-sans leading-relaxed">
+    <div class="max-w-4xl mx-auto p-6">
+      <header class="mb-8 text-center">
+        <h1 class="text-3xl font-bold mb-2">Informative Speech Builder Enhanced</h1>
+        <p class="text-gray-600">Write, research, organize, and rehearse your theremin speech—all with personalized prompts, creative suggestions, and dynamic practice tools.</p>
+      </header>
+
+      <!-- Progress bar -->
+      <div class="flex items-center mb-8">
+        <div class="flex-1 h-2 bg-gray-300 rounded">
+          <div id="progressBar" class="h-full bg-purple-500 rounded transition-all" style="width: 33.3333%;"></div>
+        </div>
+        <span id="progressText" class="ml-3 text-sm text-gray-600">1 / 8</span>
+      </div>
+
+      <!-- Navigation buttons for steps -->
+      <nav class="mb-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 text-sm font-medium">
+        <button data-step="1" class="step-btn w-full py-2 px-4 rounded shadow bg-gray-100 text-gray-700">1. My Story</button>
+        <button data-step="2" class="step-btn w-full py-2 px-4 rounded shadow bg-gray-100 text-gray-700">2. Research</button>
+        <button data-step="3" class="step-btn w-full py-2 px-4 rounded shadow bg-purple-100 text-purple-700">3. Outline</button>
+        <button data-step="4" class="step-btn w-full py-2 px-4 rounded shadow bg-gray-100 text-gray-700">4. Details</button>
+        <button data-step="5" class="step-btn w-full py-2 px-4 rounded shadow bg-gray-100 text-gray-700">5. Transitions</button>
+        <button data-step="6" class="step-btn w-full py-2 px-4 rounded shadow bg-gray-100 text-gray-700">6. Works Cited</button>
+        <button data-step="7" class="step-btn w-full py-2 px-4 rounded shadow bg-gray-100 text-gray-700">7. Practice</button>
+        <button data-step="8" class="step-btn w-full py-2 px-4 rounded shadow bg-gray-100 text-gray-700">8. Evaluation &amp; Rubric</button>
+      </nav>
+
+      <!-- Step 1: My Story -->
+      <section id="step1" class="step-content">
+        <h2 class="text-2xl font-semibold mb-4">Step&nbsp;1: My Story</h2>
+        <p class="mb-3">Start by connecting with your audience. Use this section to write about your personal relationship with the theremin. What emotions or experiences does it evoke? How does it relate to your journey?</p>
+        <textarea id="storyInput" class="w-full h-40 p-3 border rounded" placeholder="Write your story here..."></textarea>
+        <div class="mt-4">
+          <button id="storyPromptBtn" class="py-2 px-4 bg-purple-500 text-white rounded">Generate a Writing Prompt</button>
+          <p id="storyPromptDisplay" class="mt-2 italic text-gray-700"></p>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">
+          Helpful facts to inspire you:
+          </p><ul class="list-disc ml-6 mt-1">
+            <li>Lev Sergeyevich Termen built the theremin prototype in 1918 and demonstrated it in 1920【625736570281056†L170-L177】.</li>
+            <li>The theremin produces sound by mixing two radio frequencies (heterodyning)【625736570281056†L149-L154】.</li>
+            <li>It’s played without physical contact【625736570281056†L161-L162】.</li>
+            <li>Its ghostly tone appears in many sci‑fi films and songs【625736570281056†L163-L168】.</li>
+          </ul>
+        <p></p>
+      </section>
+
+      <!-- Step 2: Research -->
+      <section id="step2" class="step-content">
+        <h2 class="text-2xl font-semibold mb-4">Step&nbsp;2: Research &amp; Sources</h2>
+        <p class="mb-3">Good research strengthens your credibility. Use the form below to log each source you find. Click "Add Source" to add more entries. You can also generate random research ideas.</p>
+        <div id="sources" class="list-container"></div>
+        <div class="flex items-center space-x-2 mt-2">
+          <button id="addSourceBtn" class="py-2 px-4 bg-purple-500 text-white rounded">Add Source</button>
+          <button id="researchPromptBtn" class="py-2 px-4 bg-purple-300 text-purple-800 rounded">Generate Research Idea</button>
+        </div>
+        <p id="researchPromptDisplay" class="mt-2 italic text-gray-700"></p>
+        <p class="mt-4 text-sm text-gray-600">Suggested research topics:
+          </p><ul class="list-disc ml-6 mt-1">
+            <li>Search for interviews with modern theremin performers about the instrument’s emotional expressiveness.</li>
+            <li>Find a timeline of electronic music showing how the theremin influenced later synthesizers.</li>
+            <li>Locate primary documents about Lenin’s commission of theremin units and its historical significance【843242709009988†L253-L255】.</li>
+          </ul>
+        <p></p>
+      </section>
+
+      <!-- Step 3: Outline -->
+      <section id="step3" class="step-content active">
+        <h2 class="text-2xl font-semibold mb-4">Step&nbsp;3: Outline Skeleton</h2>
+        <p class="mb-3">Draft the backbone of your speech. Add main points and subpoints using the buttons below. You can also request structural suggestions.</p>
+        <div id="outline" class="border p-4 bg-white rounded shadow list-container"></div>
+        <div class="flex items-center space-x-2 mt-3">
+          <button id="addSectionBtn" class="py-2 px-4 bg-purple-500 text-white rounded">Add Main Point</button>
+          <button id="outlineSuggestionBtn" class="py-2 px-4 bg-purple-300 text-purple-800 rounded">Need Outline Ideas?</button>
+        </div>
+        <p id="outlineSuggestionDisplay" class="mt-2 italic text-gray-700"></p>
+        <p class="mt-4 text-sm text-gray-600">Remember: each main point should be distinct but balanced. Typical divisions include history, mechanism, and impact【113668053633677†L256-L282】.</p>
+      </section>
+
+      <!-- Step 4: Details -->
+      <section id="step4" class="step-content">
+        <h2 class="text-2xl font-semibold mb-4">Step&nbsp;4: Fill in Details</h2>
+        <p class="mb-3">Write a paragraph or two for each section of your speech. You can request content suggestions tailored to each section.</p>
+        <div id="details" class="space-y-6"></div>
+      </section>
+
+      <!-- Step 5: Transitions -->
+      <section id="step5" class="step-content">
+        <h2 class="text-2xl font-semibold mb-4">Step&nbsp;5: Transitions &amp; Flow</h2>
+        <p class="mb-3">Transitions help your audience navigate your speech. Write transitions for each pair of sections. Need help? Generate a transitional phrase using the button below.</p>
+        <div id="transitions" class="space-y-4"></div>
+        <button id="transitionPromptBtn" class="py-2 px-4 bg-purple-500 text-white rounded mt-2">Generate Transition Prompt</button>
+        <p id="transitionPromptDisplay" class="mt-2 italic text-gray-700"></p>
+        <p class="mt-4 text-sm text-gray-600">Use signal words like "first," "next," and "finally" to guide listeners【113668053633677†L360-L371】.</p>
+      </section>
+
+      <!-- Step 6: Works Cited -->
+      <section id="step6" class="step-content">
+        <h2 class="text-2xl font-semibold mb-4">Step&nbsp;6: Works Cited</h2>
+        <p class="mb-3">Add your citations below. Include author, title, date, and URL. You can also request a citation tip. Your entries will appear in MLA style with hanging indents【615354904051481†L233-L241】.</p>
+        <div id="citations" class="space-y-4"></div>
+        <div class="flex items-center space-x-2 mt-3">
+          <button id="addCitationBtn" class="py-2 px-4 bg-purple-500 text-white rounded">Add Citation</button>
+          <button id="citationTipBtn" class="py-2 px-4 bg-purple-300 text-purple-800 rounded">Need a Citation Tip?</button>
+        </div>
+        <p id="citationTipDisplay" class="mt-2 italic text-gray-700"></p>
+      </section>
+
+      <!-- Step 7: Practice -->
+      <section id="step7" class="step-content">
+        <h2 class="text-2xl font-semibold mb-4">Step&nbsp;7: Practice &amp; Performance</h2>
+        <p class="mb-3">Rehearsal turns theory into performance. Use the tools below to gamify your practice, reflect on progress, and manage nerves. Collect stars for each rehearsal and try random challenges!</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Practice tracker with stars -->
+          <div class="border p-4 rounded bg-white shadow">
+            <h3 class="text-lg font-semibold mb-2">Practice Tracker</h3>
+            <p>Click "Practice" after each rehearsal. Earn a star for each practice session and see your progress visually.</p>
+            <div class="flex items-center mt-3 space-x-4">
+              <button id="practiceBtn" class="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded">Practice</button>
+              <span id="practiceCount" class="text-xl font-bold">0</span> / 5
+              <div id="stars" class="flex space-x-1"><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span></div>
+            </div>
+            <div class="mt-4 h-4 bg-gray-200 rounded">
+              <div id="practiceBar" class="h-full bg-purple-500 rounded" style="width: 0%"></div>
+            </div>
+            <button id="challengeBtn" class="mt-4 py-2 px-4 bg-purple-300 text-purple-800 rounded">Get Practice Challenge</button>
+            <p id="challengeDisplay" class="mt-2 italic text-gray-700"></p>
+          </div>
+          <!-- Reflection notes -->
+          <div class="border p-4 rounded bg-white shadow">
+            <h3 class="text-lg font-semibold mb-2">Reflection &amp; Growth</h3>
+            <p class="mb-2">After each practice, reflect on what you improved and what to work on. You can also track key elements like eye contact, gestures, and vocal variety.</p>
+            <div id="reflections" class="space-y-4"></div>
+          </div>
+        </div>
+        <!-- Additional practice tools -->
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Confidence meter -->
+          <div class="border p-4 rounded bg-white shadow">
+            <h3 class="text-lg font-semibold mb-2">Confidence Meter</h3>
+            <p>Rate your confidence from 1 (low) to 10 (high) after each rehearsal and see your growth over time.</p>
+            <div class="flex items-center mt-3 space-x-4">
+              <input id="confidenceInput" type="number" min="1" max="10" class="w-20 p-2 border rounded" placeholder="5">
+              <button id="setConfidenceBtn" class="py-2 px-4 bg-purple-500 text-white rounded">Set</button>
+            </div>
+            <p id="confidenceDisplay" class="mt-2 text-lg font-semibold"></p>
+          </div>
+          <!-- Breathing exercise & tips -->
+          <div class="border p-4 rounded bg-white shadow">
+            <h3 class="text-lg font-semibold mb-2">Breathing &amp; Humor</h3>
+            <p class="mb-2">Take a moment to breathe, relax, and smile. Click the button to start a breathing exercise. Read a fun tip to lighten your mood.</p>
+            <button id="breathingBtn" class="py-2 px-4 bg-purple-500 text-white rounded">Breathing Exercise</button>
+            <p id="breathingDisplay" class="mt-2 italic text-gray-700"></p>
+            <p class="mt-4 text-sm text-gray-500">Fun fact: the theremin once made cats purr and dogs howl in an early film set—it might just be the original pet whisperer!</p>
+          </div>
+        </div>
+
+      <!-- Segment practice for speech parts -->
+      <div class="mt-6 border p-4 rounded bg-white shadow">
+        <h3 class="text-lg font-semibold mb-2">Segment Practice</h3>
+        <p>Select a part of your speech to rehearse separately. After practicing that segment aloud, click the button to log your progress and view a helpful tip. Practicing in smaller chunks builds confidence and smooths out the entire speech.</p>
+        <div class="mt-3">
+          <label for="segmentSelect" class="block mb-2 font-medium">Choose a segment:</label>
+          <select id="segmentSelect" class="w-full p-2 border rounded">
+            <option value="hook">Introduction &amp; Attention Getter</option>
+            <option value="main1">Main Point 1</option>
+            <option value="main2">Main Point 2</option>
+            <option value="main3">Main Point 3</option>
+            <option value="transition">Transitions</option>
+            <option value="conclusion">Conclusion &amp; Closer</option>
+          </select>
+          <button id="segmentPracticeBtn" class="mt-3 py-2 px-4 bg-purple-500 text-white rounded">Practice Selected Segment</button>
+        </div>
+        <div id="segmentProgress" class="mt-4 space-y-2"></div>
+        <p id="segmentTipDisplay" class="mt-2 italic text-gray-700"></p>
+      </div>
+      </section>
+
+      <!-- Step 8: Evaluation & Feedback -->
+      <section id="step8" class="step-content">
+        <h2 class="text-2xl font-semibold mb-4">Step&nbsp;8: Evaluation &amp; Feedback</h2>
+        <p class="mb-3">Use this rubric to reflect on your speech and understand how it will be assessed. Scores focus on preparation, effort, and audience engagement—not perfection. Mistakes are part of learning; what matters is how you recover and move forward【656297846993776†L195-L199】.</p>
+        <div class="overflow-auto">
+          <table class="w-full text-sm border bg-white rounded shadow">
+            <thead class="bg-gray-200">
+              <tr><th class="p-2 text-left">Category</th><th class="p-2 text-left">Description &amp; Tips</th><th class="p-2 text-center">Score</th></tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="p-2 font-semibold">Introduction &amp; Attention&nbsp;Getter</td>
+                <td class="p-2">Open with a vivid scene, question, or personal connection【1588171192357†L53-L68】. Tell us why this topic matters to you and your audience.</td>
+                <td class="p-2 text-center"><input type="number" min="0" max="20" class="w-20 p-1 border rounded"></td>
+              </tr>
+              <tr class="border-t">
+                <td class="p-2 font-semibold">Main&nbsp;Points &amp; Evidence</td>
+                <td class="p-2">State each point clearly and back it up with credible research. Guide listeners with signposts like “First,” “Next,” and “Finally”【1588171192357†L102-L107】.</td>
+                <td class="p-2 text-center"><input type="number" min="0" max="20" class="w-20 p-1 border rounded"></td>
+              </tr>
+              <tr class="border-t">
+                <td class="p-2 font-semibold">Transitions &amp; Flow</td>
+                <td class="p-2">Bridge your ideas with complete sentences【585107558396994†L283-L332】. Vary transition phrases so your speech feels seamless and engaging.</td>
+                <td class="p-2 text-center"><input type="number" min="0" max="15" class="w-20 p-1 border rounded"></td>
+              </tr>
+              <tr class="border-t">
+                <td class="p-2 font-semibold">Conclusion &amp; Closer</td>
+                <td class="p-2">Summarise your main points, return to your opening or issue a challenge to your listeners【1588171192357†L129-L139】. End with a memorable line.</td>
+                <td class="p-2 text-center"><input type="number" min="0" max="15" class="w-20 p-1 border rounded"></td>
+              </tr>
+              <tr class="border-t">
+                <td class="p-2 font-semibold">Delivery &amp; Engagement</td>
+                <td class="p-2">Maintain eye contact, use purposeful gestures, and vary your voice to capture attention【318047282010433†L17-L36】【323331924996700†L671-L695】.</td>
+                <td class="p-2 text-center"><input type="number" min="0" max="20" class="w-20 p-1 border rounded"></td>
+              </tr>
+              <tr class="border-t">
+                <td class="p-2 font-semibold">Effort &amp; Resilience</td>
+                <td class="p-2">Show that you prepared thoroughly and practiced repeatedly【656297846993776†L116-L124】. Stay calm and positive when things go wrong【656297846993776†L142-L166】.</td>
+                <td class="p-2 text-center"><input type="number" min="0" max="10" class="w-20 p-1 border rounded"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-sm text-gray-600">Total points: 100. These weights emphasize preparation, engagement, and perseverance. Adjust the scoring to suit your class’s priorities.</p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">How to Use This Builder</h3>
+        <p class="mb-3">Follow these steps at your own pace. Each section builds on the one before it. Click around, explore, and remember that your voice is the heart of this project.</p>
+        <ol class="list-decimal ml-6 space-y-2">
+          <li><strong>My Story:</strong> Start by writing a personal connection to your topic. Use the writing prompt button if you need a spark.</li>
+          <li><strong>Research &amp; Sources:</strong> Log every article, book, or video you consult. The research prompt button offers search ideas and reminds you to diversify your sources.</li>
+          <li><strong>Outline Skeleton:</strong> Add your main points and subpoints. Keep them balanced and distinct so your audience can follow along.</li>
+          <li><strong>Fill in Details:</strong> Flesh out each section with paragraphs, evidence, and examples. If you’re stuck, click the suggestion button for ideas.</li>
+          <li><strong>Transitions &amp; Flow:</strong> Write sentences to bridge your ideas. Use the transition prompt button for sample phrases.</li>
+          <li><strong>Works Cited:</strong> Enter your sources in MLA format. Citation tips help you remember the rules.</li>
+          <li><strong>Practice &amp; Performance:</strong> Rehearse your speech in parts and as a whole. Track your practices, reflect on progress, and try the challenges. It’s normal to feel nervous; practice builds confidence【656297846993776†L116-L139】.</li>
+          <li><strong>Evaluation &amp; Feedback:</strong> Use the rubric above to self‑assess or understand how you’ll be graded. Focus on effort and engagement more than perfection.</li>
+        </ol>
+        <p class="mt-3 text-sm text-gray-600">You’re not alone in this process. Each tool and prompt is designed to support you on your journey.</p>
+      </section>
+
+    </div>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+      // Step navigation and progress bar
+      const stepButtons = document.querySelectorAll('.step-btn');
+      const stepSections = document.querySelectorAll('.step-content');
+      const progressBar = document.getElementById('progressBar');
+      const progressText = document.getElementById('progressText');
+      function updateProgress(step) {
+        const total = stepSections.length;
+        const percent = ((step - 1) / (total - 1)) * 100;
+        progressBar.style.width = percent + '%';
+        progressText.textContent = `${step} / ${total}`;
+      }
+      function showStep(step) {
+        stepSections.forEach((section, index) => section.classList.toggle('active', index === step - 1));
+        stepButtons.forEach((btn, index) => {
+          if (index === step - 1) {
+            btn.classList.remove('bg-gray-100', 'text-gray-700');
+            btn.classList.add('bg-purple-100', 'text-purple-700');
+          } else {
+            btn.classList.add('bg-gray-100', 'text-gray-700');
+            btn.classList.remove('bg-purple-100', 'text-purple-700');
+          }
+        });
+        updateProgress(step);
+      }
+      stepButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const step = parseInt(button.dataset.step);
+          showStep(step);
+          // Build dynamic sections
+          if (step === 4) buildDetails();
+          if (step === 5) buildTransitions();
+        });
+      });
+      showStep(1);
+
+      // Step 1: Story prompts
+      const storyPromptBtn = document.getElementById('storyPromptBtn');
+      const storyPromptDisplay = document.getElementById('storyPromptDisplay');
+      const storyPrompts = [
+        "Describe the first time you heard the theremin and how its sound mirrored your feelings.",
+        "When did you realize that making music could be a metaphor for finding your voice? Write about it.",
+        "Connect the theremin’s invisible control to a moment when you overcame an unseen obstacle.",
+        "Imagine explaining the theremin to a friend who’s never heard it. How would you describe its impact on you?",
+        "Write about a time you felt misunderstood and how discovering the theremin gave you a new outlet."
+      ];
+      storyPromptBtn.addEventListener('click', () => {
+        const index = Math.floor(Math.random() * storyPrompts.length);
+        storyPromptDisplay.textContent = storyPrompts[index];
+      });
+
+      // Step 2: Research input handling and prompts
+      const sourcesContainer = document.getElementById('sources');
+      const addSourceBtn = document.getElementById('addSourceBtn');
+      function createSourceInput() {
+        const div = document.createElement('div');
+        div.className = 'list-item';
+        div.innerHTML = `
+          <input type="text" placeholder="Source (Author, Title, URL, Notes)" class="w-full p-2 border rounded" />
+          <button class="bg-red-500 text-white px-2 py-1 rounded">✕</button>
+        `;
+        div.querySelector('button').addEventListener('click', () => div.remove());
+        return div;
+      }
+      addSourceBtn.addEventListener('click', () => {
+        sourcesContainer.appendChild(createSourceInput());
+      });
+      const researchPromptBtn = document.getElementById('researchPromptBtn');
+      const researchPromptDisplay = document.getElementById('researchPromptDisplay');
+      const researchPrompts = [
+        "Find a documentary or podcast featuring theremin performers and list the key insights.",
+        "Research the life of Lev Termen and identify a lesser‑known fact about his inventions.",
+        "Look up a modern electronic musician who cites the theremin as an influence and summarize their perspective.",
+        "Investigate how the theremin was used as a spying device in the mid‑20th century.",
+        "Search for a timeline of early electronic instruments to place the theremin in context."
+      ];
+      researchPromptBtn.addEventListener('click', () => {
+        const idx = Math.floor(Math.random() * researchPrompts.length);
+        researchPromptDisplay.textContent = researchPrompts[idx];
+      });
+
+      // Step 3: Outline suggestions
+      const outlineSuggestionBtn = document.getElementById('outlineSuggestionBtn');
+      const outlineSuggestionDisplay = document.getElementById('outlineSuggestionDisplay');
+      const outlineSuggestions = [
+        "Main Point 1: Lev Termen’s early influences (radio engineering, cello).\nSubpoints: Childhood experiments, discovery of heterodyning.",
+        "Main Point 2: How the theremin works.\nSubpoints: The physics of heterodyning, playing technique using body capacitance.",
+        "Main Point 3: Cultural impact and personal connections.\nSubpoints: Film scores and pop music, the theremin’s influence on modern synths, your personal growth.",
+        "Alternative structure: 1) Invention & prototyping. 2) Mechanism & demonstration. 3) Influence on science & art.",
+        "Consider a narrative arc: 1) Mystery (discovery), 2) Mastery (understanding), 3) Meaning (impact on society and me)."
+      ];
+      outlineSuggestionBtn.addEventListener('click', () => {
+        const idn = Math.floor(Math.random() * outlineSuggestions.length);
+        outlineSuggestionDisplay.textContent = outlineSuggestions[idn];
+      });
+
+      // Outline structure builder
+      const outlineContainer = document.getElementById('outline');
+      const addSectionBtn = document.getElementById('addSectionBtn');
+      function addMainPoint() {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.className = 'border p-3 rounded mb-3 bg-gray-100';
+        sectionDiv.innerHTML = `
+          <input type="text" placeholder="Main point title" class="w-full mb-2 p-2 border rounded" />
+          <div class="subpoints"></div>
+          <button class="addSubpoint bg-purple-500 text-white py-1 px-3 rounded">Add Subpoint</button>
+        `;
+        const subpointsDiv = sectionDiv.querySelector('.subpoints');
+        const addSubpointBtn = sectionDiv.querySelector('.addSubpoint');
+        addSubpointBtn.addEventListener('click', () => {
+          const sp = document.createElement('div');
+          sp.className = 'flex items-center mb-1';
+          sp.innerHTML = `
+            <input type="text" placeholder="Subpoint" class="w-full p-2 border rounded" />
+            <button class="bg-red-500 text-white ml-2 px-2 py-1 rounded">✕</button>
+          `;
+          sp.querySelector('button').addEventListener('click', () => sp.remove());
+          subpointsDiv.appendChild(sp);
+        });
+        outlineContainer.appendChild(sectionDiv);
+      }
+      addSectionBtn.addEventListener('click', addMainPoint);
+
+      // Step 4: Build details based on outline
+      const detailsContainer = document.getElementById('details');
+      function buildDetails() {
+        detailsContainer.innerHTML = '';
+        const sections = outlineContainer.querySelectorAll('div > input[type="text"]');
+        sections.forEach((sectionInput, index) => {
+          const title = sectionInput.value || `Section ${index + 1}`;
+          const detailDiv = document.createElement('div');
+          detailDiv.className = 'border p-4 rounded bg-white shadow';
+          const suggestions = {
+            history: [
+              "Describe Termen’s early life and influences.",
+              "Explain how he discovered heterodyning.",
+              "Include anecdotes about the instrument’s debut."],
+            mechanism: [
+              "Explain heterodyning clearly.",
+              "Describe how body capacitance affects pitch and volume.",
+              "Use an analogy to help your audience understand the physics."],
+            impact: [
+              "Discuss notable films or songs that feature the theremin.",
+              "Explain how the instrument influenced later synthesizers.",
+              "Connect the theremin’s cultural impact to your personal journey."],
+            default: [
+              "Identify key facts your audience needs to know.",
+              "Connect this section back to your thesis.",
+              "Add a statistic or quote to strengthen your point."],
+          };
+          // Choose suggestions based on keyword in title
+          let key = 'default';
+          const lowerTitle = title.toLowerCase();
+          if (lowerTitle.includes('history') || lowerTitle.includes('invention')) key = 'history';
+          else if (lowerTitle.includes('mechanism') || lowerTitle.includes('how')) key = 'mechanism';
+          else if (lowerTitle.includes('impact') || lowerTitle.includes('legacy')) key = 'impact';
+          const suggestionList = suggestions[key];
+          detailDiv.innerHTML = `
+            <h3 class="text-lg font-semibold mb-2">${title}</h3>
+            <textarea class="w-full h-24 p-2 border rounded" placeholder="Write your content for ${title}..."></textarea>
+            <button class="suggestBtn mt-2 py-1 px-3 bg-purple-300 text-purple-800 rounded">Generate Suggestion</button>
+            <p class="suggestDisplay mt-1 italic text-gray-700"></p>
+          `;
+          // Attach suggestion handler
+          detailDiv.querySelector('.suggestBtn').addEventListener('click', () => {
+            const idx = Math.floor(Math.random() * suggestionList.length);
+            detailDiv.querySelector('.suggestDisplay').textContent = suggestionList[idx];
+          });
+          detailsContainer.appendChild(detailDiv);
+        });
+      }
+
+      // Step 5: Build transitions based on outline
+      const transitionsContainer = document.getElementById('transitions');
+      const transitionPromptBtn = document.getElementById('transitionPromptBtn');
+      const transitionPromptDisplay = document.getElementById('transitionPromptDisplay');
+      const transitionPrompts = [
+        "Now that you know who created this instrument, let's discover how it works.",
+        "We’ve explored its origins—next, let's dive into the science behind the sound.",
+        "Having decoded the mechanism, it’s time to hear how the theremin influenced culture.",
+        "To wrap up our journey, let’s see how this instrument changed both music and me.",
+        "Now that we’ve discussed its cultural impact, let's conclude with a reflection on its personal meaning."
+      ];
+      transitionPromptBtn.addEventListener('click', () => {
+        const idp = Math.floor(Math.random() * transitionPrompts.length);
+        transitionPromptDisplay.textContent = transitionPrompts[idp];
+      });
+      function buildTransitions() {
+        transitionsContainer.innerHTML = '';
+        const sectionTitles = outlineContainer.querySelectorAll('div > input[type="text"]');
+        sectionTitles.forEach((inputEl, idx) => {
+          if (idx < sectionTitles.length - 1) {
+            const transitionDiv = document.createElement('div');
+            transitionDiv.className = 'border p-4 rounded bg-white shadow';
+            const from = inputEl.value || `Section ${idx + 1}`;
+            const to = sectionTitles[idx + 1].value || `Section ${idx + 2}`;
+            transitionDiv.innerHTML = `
+              <h3 class="text-lg font-semibold mb-2">Transition from “${from}” to “${to}”</h3>
+              <textarea class="w-full h-16 p-2 border rounded" placeholder="Write your transition here..."></textarea>
+            `;
+            transitionsContainer.appendChild(transitionDiv);
+          }
+        });
+      }
+
+      // Step 6: Works Cited – dynamic citation entries and tips
+      const citationsContainer = document.getElementById('citations');
+      const addCitationBtn = document.getElementById('addCitationBtn');
+      const citationTipBtn = document.getElementById('citationTipBtn');
+      const citationTipDisplay = document.getElementById('citationTipDisplay');
+      function addCitationRow() {
+        const row = document.createElement('div');
+        row.className = 'flex items-center space-x-2';
+        row.innerHTML = `
+          <input type="text" placeholder="Author" class="w-1/4 p-2 border rounded" />
+          <input type="text" placeholder="Title" class="w-1/4 p-2 border rounded" />
+          <input type="text" placeholder="Date" class="w-1/4 p-2 border rounded" />
+          <input type="text" placeholder="URL" class="w-1/4 p-2 border rounded" />
+          <button class="bg-red-500 text-white px-2 py-1 rounded">✕</button>
+        `;
+        row.querySelector('button').addEventListener('click', () => row.remove());
+        citationsContainer.appendChild(row);
+      }
+      addCitationBtn.addEventListener('click', addCitationRow);
+      const citationTips = [
+        "Remember to alphabetize your entries by the author’s last name.",
+        "If a source has no author, start with the title.",
+        "Use the format: Author. Title. Website. Date Published. URL.",
+        "Include an access date for online sources if the date isn’t obvious.",
+        "List the author’s full first and last name in MLA style." 
+      ];
+      citationTipBtn.addEventListener('click', () => {
+        const idt = Math.floor(Math.random() * citationTips.length);
+        citationTipDisplay.textContent = citationTips[idt];
+      });
+
+      // Step 7: Practice & Performance
+      const practiceBtn = document.getElementById('practiceBtn');
+      const practiceCountEl = document.getElementById('practiceCount');
+      const practiceBar = document.getElementById('practiceBar');
+      const challengeBtn = document.getElementById('challengeBtn');
+      const challengeDisplay = document.getElementById('challengeDisplay');
+      const starsContainer = document.getElementById('stars');
+      const reflectionsContainer = document.getElementById('reflections');
+      let practiceCount = 0;
+      // Initialize stars
+      for (let i = 0; i < 5; i++) {
+        const star = document.createElement('span');
+        star.className = 'star';
+        star.textContent = '☆';
+        starsContainer.appendChild(star);
+      }
+      practiceBtn.addEventListener('click', () => {
+        if (practiceCount < 5) {
+          practiceCount++;
+          practiceCountEl.textContent = practiceCount;
+          practiceBar.style.width = (practiceCount / 5) * 100 + '%';
+          // Light up a star
+          const star = starsContainer.children[practiceCount - 1];
+          star.textContent = '★';
+          star.classList.add('active');
+          // Add a reflection area
+          const reflectionDiv = document.createElement('div');
+          reflectionDiv.className = 'border p-2 rounded bg-gray-100';
+          reflectionDiv.innerHTML = `
+            <label class="text-sm font-semibold">Reflection ${practiceCount}:</label>
+            <textarea class="w-full p-2 border rounded mt-1" placeholder="What did you improve? What needs work?"></textarea>
+            <div class="flex items-center mt-1 space-x-2 text-xs text-gray-600">
+              <label><input type="checkbox"> Clear transitions</label>
+              <label><input type="checkbox"> Eye contact</label>
+              <label><input type="checkbox"> Gestures</label>
+              <label><input type="checkbox"> Vocal variety</label>
+            </div>
+          `;
+          reflectionsContainer.appendChild(reflectionDiv);
+          if (practiceCount === 5) {
+            practiceBtn.disabled = true;
+            practiceBtn.textContent = 'Practice Complete!';
+            practiceBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
+          }
+        }
+      });
+      // Practice challenges
+      const practiceChallenges = [
+        "Speak your introduction with your eyes closed to focus on your tone.",
+        "Use a mirror and practice hand gestures while describing heterodyning.",
+        "Perform your speech standing up and practice moving naturally.",
+        "Time yourself to ensure your speech fits within the 6-7 minute window.",
+        "Smile when you speak about the theremin’s impact to convey enthusiasm."
+      ];
+      challengeBtn.addEventListener('click', () => {
+        const idx = Math.floor(Math.random() * practiceChallenges.length);
+        challengeDisplay.textContent = practiceChallenges[idx];
+      });
+      // Confidence meter
+      const confidenceInput = document.getElementById('confidenceInput');
+      const setConfidenceBtn = document.getElementById('setConfidenceBtn');
+      const confidenceDisplay = document.getElementById('confidenceDisplay');
+      setConfidenceBtn.addEventListener('click', () => {
+        const value = parseInt(confidenceInput.value);
+        if (!isNaN(value) && value >= 1 && value <= 10) {
+          confidenceDisplay.textContent = `Current confidence: ${value}/10`;
+        } else {
+          confidenceDisplay.textContent = 'Please enter a number between 1 and 10.';
+        }
+      });
+      // Breathing exercise
+      const breathingBtn = document.getElementById('breathingBtn');
+      const breathingDisplay = document.getElementById('breathingDisplay');
+      breathingBtn.addEventListener('click', () => {
+        breathingDisplay.textContent = 'Inhale...';
+        setTimeout(() => {
+          breathingDisplay.textContent = 'Hold...';
+        }, 4000);
+        setTimeout(() => {
+          breathingDisplay.textContent = 'Exhale...';
+        }, 8000);
+        setTimeout(() => {
+          breathingDisplay.textContent = '';
+        }, 12000);
+      });
+
+      // Segment practice functionality
+      // Track counts for each speech segment
+      const segmentCounts = {
+        hook: 0,
+        main1: 0,
+        main2: 0,
+        main3: 0,
+        transition: 0,
+        conclusion: 0
+      };
+      // Tips for each segment drawn from credible public speaking resources
+      const segmentTips = {
+        hook: [
+          "Begin with a vivid description or character to engage listeners【1588171192357†L53-L63】.",
+          "Share a personal story or experience that connects you to the topic【1588171192357†L53-L63】.",
+          "Pose a provocative question or state a surprising fact to hook your audience【1588171192357†L64-L65】.",
+          "Explain your interest in the topic and why it matters to your listeners【1588171192357†L66-L68】."
+        ],
+        main: [
+          "State your point clearly and support it with evidence, but avoid overwhelming details.",
+          "Use signposts like ‘First,’ ‘Next,’ and ‘Finally’ to guide the audience through your points【1588171192357†L102-L107】.",
+          "Connect each subpoint back to your thesis and illustrate with concrete examples【1588171192357†L76-L84】."
+        ],
+        transition: [
+          "Use a full sentence to bridge between points【585107558396994†L283-L332】.",
+          "Keep your connective focused on moving between ideas rather than adding new evidence【585107558396994†L319-L323】.",
+          "Vary your transitions so you don’t repeat the same phrase【585107558396994†L345-L346】.",
+          "Use signposts like ‘First,’ ‘Second,’ ‘Third’ or phrases like ‘Now that we’ve covered…’ to orient listeners【585107558396994†L294-L299】."
+        ],
+        conclusion: [
+          "Summarise your main points and refocus the audience on your thesis【1588171192357†L129-L133】.",
+          "Create closure with a memorable statement or return to your opening story【1588171192357†L134-L137】.",
+          "End with a challenge or look toward the future to leave your listeners thinking【1588171192357†L134-L139】."
+        ]
+      };
+      const segmentSelect = document.getElementById('segmentSelect');
+      const segmentPracticeBtn = document.getElementById('segmentPracticeBtn');
+      const segmentProgressEl = document.getElementById('segmentProgress');
+      const segmentTipDisplay = document.getElementById('segmentTipDisplay');
+      // Display current practice counts for segments
+      function updateSegmentProgress() {
+        // Clear existing list
+        segmentProgressEl.innerHTML = '';
+        const segments = [
+          { key: 'hook', label: 'Introduction' },
+          { key: 'main1', label: 'Main Point 1' },
+          { key: 'main2', label: 'Main Point 2' },
+          { key: 'main3', label: 'Main Point 3' },
+          { key: 'transition', label: 'Transitions' },
+          { key: 'conclusion', label: 'Conclusion' }
+        ];
+        segments.forEach(seg => {
+          const div = document.createElement('div');
+          div.className = 'flex items-center space-x-2 text-sm';
+          const count = segmentCounts[seg.key];
+          div.innerHTML = `<span class="font-semibold">${seg.label}:</span> <span>${count} practice${count === 1 ? '' : 's'}</span>`;
+          segmentProgressEl.appendChild(div);
+        });
+      }
+      // Initialise progress display
+      updateSegmentProgress();
+      segmentPracticeBtn.addEventListener('click', () => {
+        const selected = segmentSelect.value;
+        // Increment count for selected segment
+        if (segmentCounts[selected] !== undefined) {
+          segmentCounts[selected]++;
+        }
+        // Update progress display
+        updateSegmentProgress();
+        // Determine which tip array to use
+        let tipArray;
+        if (selected.startsWith('main')) {
+          tipArray = segmentTips.main;
+        } else {
+          tipArray = segmentTips[selected];
+        }
+        // Show a random tip
+        if (tipArray && tipArray.length > 0) {
+          const idx = Math.floor(Math.random() * tipArray.length);
+          segmentTipDisplay.textContent = tipArray[idx];
+        }
+      });
+    </script>
+  
+</body></html>
